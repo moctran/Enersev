@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Current Time</title>
+  <style>
+    body {
+      text-align: center;
+      font-size: 48px;
+      margin-top: 200px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="current-time"></h1>
+
+  <script>
+    // Function to update the current time
+    function updateTime() {
+      var currentTime = new Date();
+      var hours = currentTime.getHours();
+      var minutes = currentTime.getMinutes();
+      var seconds = currentTime.getSeconds();
+
+      // Add leading zeros to the hours, minutes, and seconds
+      hours = (hours < 10 ? "0" : "") + hours;
+      minutes = (minutes < 10 ? "0" : "") + minutes;
+      seconds = (seconds < 10 ? "0" : "") + seconds;
+
+      // Format the time as HH:MM:SS
+      var formattedTime = hours + ":" + minutes + ":" + seconds;
+
+      // Update the current time element
+      document.getElementById("current-time").textContent = formattedTime;
+    }
+
+    // Call the updateTime() function every second
+    setInterval(updateTime, 1000);
+  </script>
+</body>
+</html>
